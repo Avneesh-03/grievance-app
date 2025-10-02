@@ -1,53 +1,11 @@
-### 1️⃣ Register User
-POST http://localhost:3000/api/auth/register
+# Login user and get JWT token
+POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
 {
-  "name": "Avneesh Kumar",
-  "email": "avneesh@example.com",
-  "password": "password123"
+  "email": "user@example.com",
+  "password": "yourpassword"
 }
 
-### 2️⃣ Login User
-POST http://localhost:3000/api/auth/login
-Content-Type: application/json
 
-{
-  "email": "avneesh@example.com",
-  "password": "password123"
-}
 
-### 3️⃣ Create Complaint
-# Replace <TOKEN> with JWT from login response
-POST http://localhost:3000/api/complaints
-Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZGNjMzhkYTY4MDg1NGJmODg2YjEzMSIsImlhdCI6MTc1OTI5OTg1MCwiZXhwIjoxNzU5Mzg2MjUwfQ.tzFg5nzFslui_Jnzl-5TRY0g9AhLdcY3J39l1NUOqmY
-
-{
-  "title": "Broken Street Light",
-  "description": "Street light near the caravan is broken"
-}
-
-### 4️⃣ Get All Complaints
-GET http://localhost:3000/api/complaints
-Authorization: Bearer <TOKEN>
-
-### 5️⃣ Get Complaint by ID
-# Replace <COMPLAINT_ID> with an actual complaint ID from previous response
-GET http://localhost:3000/api/complaints/<COMPLAINT_ID>
-Authorization: Bearer <TOKEN>
-
-### 6️⃣ Update Complaint Status
-# Replace <COMPLAINT_ID> with an actual complaint ID
-PUT http://localhost:3000/api/complaints/<COMPLAINT_ID>
-Content-Type: application/json
-Authorization: Bearer <TOKEN>
-
-{
-  "status": "in-progress"
-}
-
-### 7️⃣ Delete Complaint
-# Replace <COMPLAINT_ID> with an actual complaint ID
-DELETE http://localhost:3000/api/complaints/<COMPLAINT_ID>
-Authorization: Bearer <TOKEN>
